@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/find/find",
+    "pages/product/product",
+    "pages/mine/mine",
+    "pages/address/address",
+    "pages/address/address_editor",
+    "pages/order/order_list",
+    "pages/cart/cart",
+    "pages/myfav/myfav",
+    "pages/item/item",
+    "pages/order/order_detail",
+    "pages/login/login"
+  ],
+  "tabBar": {
+    "selectedColor": "#538ada",
+    "color": "#538ada",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "images/find.png",
+        "selectedIconPath": "images/find_active.png"
+      },
+      {
+        "pagePath": "pages/product/product",
+        "text": "产品",
+        "iconPath": "images/label.png",
+        "selectedIconPath": "images/label_active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine_active.png"
+      }
+    ]
+  }
+}

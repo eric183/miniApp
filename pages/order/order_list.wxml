@@ -1,0 +1,22 @@
+<!--pages/order/order_list.wxml-->
+<import src="/components/card_banner" />
+<import src="/components/address_card" />
+<view class="order-wrapper">
+    <template is="cardTop" />
+    <view class="tag-toggle" bindtap='tagHandler'>
+        <text class="{{activeTag == 0 ? 'tag-active' : ''}}"  data-tag="0">全部</text>
+        <text class="{{activeTag == 1 ? 'tag-active' : ''}}"  data-tag="1">待付款</text>
+        <text class="{{activeTag == 2 ? 'tag-active' : ''}}"  data-tag="2">待发货</text>
+        <text class="{{activeTag == 3 ? 'tag-active' : ''}}"  data-tag="3">待收货</text>
+        <text class="{{activeTag == 4 ? 'tag-active' : ''}}"  data-tag="4">待评价</text>
+    </view>
+    <scroll-view>
+        <view>
+            <template is="orderInfo"/>
+            <template is="cardBottom" /> 
+        </view>
+        
+    </scroll-view>
+</view>
+
+<!-- <text>pages/order/order_list.wxml</text> -->

@@ -1,0 +1,19 @@
+<template name="tabs">
+    <view class="tab-design">
+        <navigator  hover-class="none" class="find" url="/pages/find/find">
+            <image hidden="{{showTab != 'find' ? false : true}}" src='/images/find.png'></image> 
+            <image hidden="{{showTab == 'find' ? false : true}}" src='/images/find_active.png'></image>
+            <text>发现</text>
+        </navigator>
+        <navigator  hover-class="none" class="label" url="/pages/label/label">
+            <image hidden="{{showTab != 'label' ? false : true}}" src='/images/label.png'></image> 
+            <image hidden="{{showTab == 'label' ? false : true}}" src='/images/label_active.png'></image>
+            <text>标签</text>
+        </navigator>
+        <navigator  hover-class="none" class="mine" url="/pages/personal/personal">
+            <image hidden="{{showTab != 'mine' ? false : true}}" src='/images/mine.png'></image> 
+            <image hidden="{{showTab == 'mine' ? false : true}}" src='/images/mine_active.png'></image>
+            <text>我的</text>
+        </navigator>
+    </view>
+</template>

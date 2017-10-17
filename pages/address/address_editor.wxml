@@ -1,0 +1,56 @@
+<import src="/components/card_banner.wxml" />
+
+<view class="editor-wrapper">
+    <template is="cardTop" />
+    <form>
+         <view class="form-tool package-owner">
+            <label>
+                <text>收货人</text>
+                <input type="text"></input>
+            </label>
+         </view> 
+         <view class="form-tool phone-tool">
+            <label>
+                <text>联系电话</text>
+                <input type="number" maxlength="11"></input>
+                <image class="plus-ico" src="/images/plus.png" bindtap='phoneTabHandler'></image>
+            </label>
+         </view> 
+         <view class="form-tool">
+            <label>
+                <text>邮政编码</text>
+                <input maxlength='6' placeholder-class="place-holder-style" bindinput='changeCodeHandler' type="text" id="code" placeholder='邮政编码（选填）'></input>
+                <!-- <text class="place-holder-text {{hideCodeHolder ? 'hide-holder' : ''}}">邮政编码（选填）</text> -->
+            </label>
+         </view> 
+         <picker class="form-tool" bindchange="bindRegionChange" mode="region" value="{{region}}" custom-item="{{customItem}}">
+            <label>
+                <text>收货地址</text>
+                <view class="place-holder-text select-design">
+                    <text wx:if="{{region.length <= 0}}">请选择</text>
+                    <text wx:else="{{region.length > 0}}">{{region[0]}} {{region[1]}} {{region[2]}}</text>
+                    <image class="right-direction-icon" src="/images/right_direction.png"></image>
+                </view>
+                <!-- <picker></picker> -->
+            </label>
+         </picker> 
+         <view class="text-area-tool">
+            <!-- <label> -->
+                <textarea placeholder='请填写详细地址'></textarea>
+                <!-- <input type="text"></input> -->
+            <!-- </label> -->
+         </view> 
+        <template is="cardBottom" />
+        <view class="form-tool">
+            <label>
+                <text>设为默认</text>
+                <switch checked bindchange="switch1Change"/>
+            </label>
+         </view> 
+    </form>
+    <view class="button-group">
+        <button>取消</button>
+        <button class="save-one">保存</button>
+    </view>
+
+</view>

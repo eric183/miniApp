@@ -1,0 +1,83 @@
+<import src="/components/card_banner.wxml" />
+<!--pages/mine/mine.wxml-->
+
+<view class="mine-wrapper">
+    <view>
+         <template is="cardTop" />
+         <view class="cover">
+            <image src="/images/2.jpg"></image>
+            <text>大晴天</text> 
+         </view>
+         <template is="cardBottom" />
+    </view>
+    <view>
+        <view class="common-card middle-card">
+            <text class="card-title">我的订单</text>
+            <navigator url='/pages/order/order_list?tag=0'>
+                <text>查看全部订单</text>
+                <image class="right-direction-icon" src="/images/right_direction.png"></image>
+            </navigator>
+        </view>
+        <view class="logos-card">
+            <navigator url='/pages/order/order_list?tag=1'>
+                <image src="/images/logo_1.png"></image>
+                <text>待付款</text>
+            </navigator>
+            <navigator url='/pages/order/order_list?tag=2'>
+                <image src="/images/logo_2.png"></image>
+                <text>待发货</text>
+            </navigator>
+            <navigator url='/pages/order/order_list?tag=3'>
+                <image src="/images/logo_3.png"></image>
+                <text>待收货</text>
+            </navigator>
+            <navigator url='/pages/order/order_list?tag=4'>
+                <image src="/images/logo_4.png"></image>
+                <text>已完成</text>
+            </navigator>
+        </view>
+    </view>
+    <template is="cardBottom" />
+
+    <view class="card-bottom">
+        <view class="card-bottom-top">
+            <navigator class="common-card" url='/pages/cart/cart'>
+                <image class="left-icon" src="/images/car.png"></image>
+                <text>购物车</text>
+                <view>
+                    <image class="right-direction-icon" src="/images/right_direction.png"></image>
+                </view>
+            </navigator>
+            <navigator class="common-card" url='/pages/myfav/myfav'>
+                <image class="left-icon" src="/images/fav.png"></image>
+                <text>我的收藏</text>
+                <view>
+                    <image class="right-direction-icon" src="/images/right_direction.png"></image>
+                </view>
+            </navigator>
+            <navigator class="common-card" url="/pages/address/address">
+                <image class="left-icon" src="/images/posi.png"></image>
+                <text>收货地址</text>
+                <view>
+                    <image class="right-direction-icon" src="/images/right_direction.png"></image>
+                </view>
+            </navigator>
+        </view>
+        <view class="card-bottom-bottom">
+            <navigator class="common-card">
+                <image class="left-icon" src="/images/tel.png"></image>
+                <text>联系客服</text>
+                <view>
+                    <image class="right-direction-icon" src="/images/right_direction.png"></image>
+                </view>
+            </navigator>
+             <navigator class="common-card">
+                <image class="left-icon" src="/images/about.png"></image>
+                <text>关于FIND-FABRIC</text>
+                <view>
+                    <image class="right-direction-icon" src="/images/right_direction.png"></image>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

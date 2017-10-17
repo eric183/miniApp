@@ -1,0 +1,157 @@
+<import src="/components/card_banner" />
+<!--pages/item/item.wxml-->
+
+<wxs src="../../wxs/sliceMoney.wxs" module="sliceMoney"/>
+ 
+<view class="item-wrapper">
+    <scroll-view class="scroll-view" scroll-y="{{!isAction}}" scroll-with-animation="true" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class="item-top">
+            <image class="top-image" src="/images/2.jpg"></image>
+            <view class="top-info">
+                <view class="info-text">
+                    <text>17CS360101</text>
+                    <view>
+                        <text>TREND FABRIC</text><text>现货</text>
+                    </view>
+                    <view>
+                        <text>645  </text>
+                        <text>335</text>
+                    </view>
+                </view>
+                <view class="tag-toggle" bindtap='goHash'>
+                    <image src="/images/color_block.png" data-hash="hashImage"></image>
+                    <view data-hash="hashProperty">
+                        <text data-hash="hashProperty">属性</text>
+                    </view>
+                    <view data-hash="hashColor">
+                        <text data-hash="hashColor">颜色</text>
+                    </view>
+                    <view data-hash="hashTag"> 
+                        <text data-hash="hashTag">标签</text>
+                    </view>
+                    <view data-hash="hashDesign">
+                        <text data-hash="hashDesign">款式</text>
+                    </view>
+                </view>
+                <template is="cardBottom"/>
+            </view>
+        </view>
+        <view class="item-property" id="hashProperty">
+            <view class="key-ring">
+                <image src='/images/key_ring.jpg'></image>
+                <view>
+                    <text>样布价：</text>
+                    <text>￥40.00/米</text>
+                    <text>大货价：</text>
+                    <text>￥35.00/米</text>
+                </view>
+                <view>
+                    <text>货号 17CS360101</text>
+                    <text>门幅 114cm</text>
+                    <text>克重 9g/m</text>
+                    <text>成分 80%C  15%S  5%P</text>
+                </view>
+            </view>
+            <template is="cardBottom"/>
+        </view>
+        <view class="item-color" id="hashColor">
+            <view class="item-color-wrapper">
+                <view class="item-color-photo">
+                    <image src="/images/2.jpg"></image>
+                </view>
+                <!-- <view class="item-color-photo {{index % 2 == 0?'item-photo-right':''}}">
+                    <image src="/images/2.jpg"></image>
+                </view> -->
+            </view>
+            <template is="cardBottom"/>
+        </view>
+        <view class="item-design" id="hashDesign">
+            <view class="item-design-wrapper">
+                <view class="item-design-photo item-photo-right">
+                    <image src="/images/3.jpg"></image>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="cart-bottom {{isAction?'action-tool':''}}">
+        <view class="bottom-toggle">
+            <navigator url='/pages/find/find' open-type="switchTab">
+                <view>
+                    <image src="/images/find.png"></image>
+                </view>
+                <text>发现</text>
+            </navigator>
+            <navigator>
+                <view>
+                    <image src="/images/tel.png"></image>
+                </view>
+                <text>咨询</text>
+            </navigator>
+            <view class="bottom-ico" bindtap='favBinder'>
+                <view>
+                    <image src="/images/fav.png" hidden='{{isFaved}}'></image>
+                     <image src="/images/is_faved.png" hidden='{{!isFaved}}'></image> 
+                </view>
+                <text>收藏</text>
+            </view>
+                
+        </view>
+        <view class="button" bindtap='actionBind'>加入购物车</view>
+        <view class="button select" bindtap='actionBind'>立即购买</view>
+        
+    </view>
+    <view class="temporary-modal {{isAction?'action-tool show-modal':''}}">
+        <view class="modal-view">
+            <view class="modal-info modal-common">
+                <view class="modal-info-left">
+                    <image src='/images/2.jpg'></image>
+                </view>
+                <view class="modal-info-right">
+                    <view>
+                        <text>￥</text><text>{{sliceMoney('67.00', 'l')}}.</text><text>{{sliceMoney('67.00')}}/码</text>
+                    </view>
+                    <text> 货号：1830-1#</text>
+                    <view>
+                        <text>库存160件</text><text>现货</text>
+                    </view>
+                    <view bindtap='actionBind'>
+                        <image src='/images/cross.png'></image>
+                    </view>
+                </view>
+            </view>
+            <view class="modal-common modal-pattern">
+                <view class="common-header">
+                    <text>颜色/图案</text>
+                </view>
+                <view class="logo-pattern">
+                    <view>
+                        <image src='/images/2.jpg'></image>
+                    </view>
+                </view>
+            </view>
+            <view class="modal-common modal-type">
+                <view class="common-header">
+                    <text>类型</text>
+                </view>
+                <view class="type-info" bindtap='activeBinder'>
+                    <text class="{{ activeNumber == 1 ? 'active-text' : ''}}" data-active-number="1">调样</text>
+                    <text class="{{ activeNumber == 2 ? 'active-text' : ''}}" data-active-number="2">大货</text>
+                    <text class="{{ activeNumber == 3 ? 'active-text' : ''}}" data-active-number="3">色卡</text>
+                </view>
+
+                <view class="common-header header-design">
+                    <text>购买数量</text>
+                    <text>（购买范围1-50）</text>
+                    <view class="order-count order-input {{item.count == 1 ? 'count-only-one' : ''}}">
+                        <view data-index="{{index}}" bindtap='minusHandler'>-</view>
+                        <label>
+                            <input value="{{item.count}}" data-index="{{index}}" bindinput='inputHandler'></input>
+                        </label>
+                        <view data-index="{{index}}" bindtap='plusHandler'>+</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="shadow-modal" bindtap='actionBind'></view>
+    </view>
+</view>

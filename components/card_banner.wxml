@@ -1,0 +1,11 @@
+<template name="cardTop">
+    <view class="block-back-top">
+        <image src="/images/block_back_top.jpg"></image>
+    </view>
+</template>
+
+<template name="cardBottom">
+    <view class="block-back-bottom">  
+        <image src="/images/block_back_bottom.jpg"></image>
+    </view>  
+</template>

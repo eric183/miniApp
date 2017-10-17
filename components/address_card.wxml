@@ -1,0 +1,101 @@
+<import src="/components/card_banner.wxml" />
+
+<template name="cards">
+    <view class="address-card">
+        <view class="address-card-top">
+            <view class="address-user-info order-design">
+                <text>收货人：杜诗羽</text>
+                <text>18649947655</text>
+            </view>
+            <view>
+                <image class="position-image" mode="{{'aspectFit'}}" src="/images/position.png"></image>
+                <text>收货地址：广东省深圳市南山区桃源街道南山南北桥北0单元5楼</text>
+            </view>
+        </view>
+        <view class="adress-editor-handler" hidden='{{isOrder}}'>
+            <label for="radio{{index}}" data-index="{{index}}" bindtap="testClick" data-item="{{item}}" class="{{item.checked ? 'checked-handler sure-checked' : 'checked-handler'}}" >
+                <image class="checked-handler-pic" src="/images/checked.png"></image>  
+                <text class="checked-handler-pic checked-text"></text>  
+                <!-- <radio-group bindchange="radioChange">
+                     <label class="radio">
+                        <radio value="{{item.data}}" checked="{{item.data}}"/>默认地址{{item.data}}
+                    </label> 
+                </radio-group> -->
+                 <text>默认地址</text> 
+            </label>
+            <view class="method-handler">
+                <view bindtap="goEdit" data-item="{{item}}">
+                    <image src="/images/edit_tool.png"></image> 
+                    <text class="address-edit">编辑</text>
+                </view>
+                <view bindtap='deleteButton'>
+                    <image src="/images/delete_tool.png"></image> 
+                    <text>删除</text>
+                </view>
+           
+            </view>
+        </view>
+        <template is="cardBottom" />
+
+    </view>
+   
+</template>
+
+<template name="orderInfo">
+    <view>
+        <view class="order-heading">
+            <text>订单编号：17171564554513</text>
+            <text>等待买家付款</text>
+        </view>
+        <view class="order-detail">
+            <view class="order-items">
+                <image src="/images/2.jpg"></image>
+                <view class="order-detail-info">
+                    <text>MH-7980</text>
+                    <text class="grey-text">货号：MH-7980</text>
+                    <text class="grey-text">类型：调样</text>
+                    <view class="bottom-view">
+                        <text>￥80</text><text class="smaller-text">.00/码</text>
+                    </view>
+                    <text class="order-count">X2</text>
+                </view>
+            </view>
+            <!-- <view class="order-items">
+                <image src="/images/2.jpg"></image>
+                <view class="order-detail-info">
+                    <text>MH-7980</text>
+                    <text class="grey-text">货号：MH-7980</text>
+                    <text class="grey-text">类型：调样</text>
+                    <view class="bottom-view">
+                        <text>￥80</text><text class="smaller-text">.00/码</text>
+                    </view>
+                </view>
+            </view> -->
+        </view>
+        <view class="shipping-method" hidden='{{!isDetail}}'>
+            <view>
+                <text>配送方式</text><text>运费到付</text>
+            </view>
+            <view>
+                <text>订单备注：</text><text>无</text>
+            </view>
+        </view>
+        <view class="order-price">
+            <text>共1件商品</text>
+            <text>合计：￥</text>
+            <text>160</text>
+            <text class="smaller-text">.00</text>
+        </view>
+
+        <view class="order-sheet" hidden='{{!isDetail || isSubmit}}'>
+            <text>订单编号：  17171564554513</text>
+            <text>创建时间：  2017-07-12 16:13:05</text>
+        </view>
+        <view class="button-handler" hidden='{{isDetail}}'>
+            <view class='button-group'>
+                <button>取消订单</button>
+                <button>确认付款</button>
+            </view>
+        </view>
+    </view>
+</template>

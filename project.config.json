@@ -1,0 +1,95 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": false,
+		"minified": true
+	},
+	"compileType": "weapp",
+	"libVersion": "1.5.3",
+	"appid": "wxb1ae692f0612342b",
+	"projectname": "find_fabric",
+	"miniprogramRoot": "./",
+	"condition": {
+		"weapp": {
+			"current": 9,
+			"list": [
+				{
+					"id": 0,
+					"name": "product",
+					"pathName": "pages/product/product",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "address",
+					"pathName": "pages/address/address",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "editor",
+					"pathName": "pages/address/address_editor",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mine",
+					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "order_list",
+					"pathName": "pages/order/order_list",
+					"query": "tag=0"
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cart/cart",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "item",
+					"pathName": "pages/item/item",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "order_detail",
+					"pathName": "pages/order/order_detail",
+					"query": "tag=0"
+				},
+				{
+					"id": 8,
+					"name": "order_submit",
+					"pathName": "pages/order/order_detail",
+					"query": "tag=1"
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "find",
+					"pathName": "pages/find/find",
+					"query": "tag=1"
+				}
+			]
+		},
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		}
+	}
+}

@@ -1,0 +1,12 @@
+var order = {
+
+    timer: function(data, str) {
+        var _s = data.split(":");
+        return !!str ? _s[0] : _s[1];
+    }
+}
+
+
+
+
+module.exports = order;

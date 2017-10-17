@@ -1,0 +1,42 @@
+<!--pages/login/login.wxml-->
+<!-- <text>pages/login/login.wxml</text> -->
+
+<view class="loggin-wrapper">
+    
+    <!-- <view class="main-bg"> -->
+         <image class="main-bg" src="/images/login_bg.jpg"></image>     
+    <!-- </view> -->
+
+    <view class="loggin-main">
+        <image src="/images/login_bg_1.png"></image>
+
+        <form>
+            <view>
+                <label>
+                    <text>手机号</text>
+                    
+                    <input maxlength='11' type='number' placeholder='请输入手机号' value="{{phoneNumber}}" bindinput="phoneBinder"></input>
+                </label>
+            </view>
+            <view>
+                <label>
+                    <text>验证码</text>
+                    
+                    <input type='number' placeholder='短信验证码' bindinput='checkBinder'></input>
+
+                    <view class="identifying-code" bindtap='identifyingBind' hidden='{{isSent}}'>
+                        <text>免费获取</text>
+                    </view>
+                    <view class="identifying-code second-code" bindtap='identifyingBind' hidden='{{!isSent}}'>
+                        <text>{{second}}S后重发</text>
+                    </view>
+
+
+                </label>
+            </view>
+            <button class="{{checkNumber ? 'button-actived' : ''}}" disabled="{{!checkNumber}}" hover-class="{{checkNumber ? 'hover-active' : 'none'}}" bindtap='buttonBinder'>
+                登录
+            </button>
+        </form>
+    </view>
+</view>

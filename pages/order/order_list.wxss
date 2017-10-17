@@ -1,0 +1,44 @@
+/* pages/order/order_list.wxss */
+
+
+.order-wrapper {
+    font-size: 28rpx;
+}
+
+.tag-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #333;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+ .tag-toggle text {
+    height: 80rpx;
+    /* vertical-align: middle; */
+    line-height: 80rpx;
+
+    /* flex: 1; */
+} 
+
+.tag-active {
+    position: relative;
+    color: #ff722c;
+}
+
+.tag-active::after {
+    position: absolute;
+    content: "";
+    background: #ff722c;
+    width: 100%;
+    left: 0; 
+    bottom: 0;
+    height: 4rpx;
+}
+
+
+.smaller-text {
+    font-size: 18rpx;
+}
+

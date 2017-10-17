@@ -1,0 +1,10 @@
+var sliceMoney = function (str, word) {
+    if (word == 'l') {
+        return getRegExp("(.+)\.").exec(str)[1];
+    } else {
+        return getRegExp(".+\.(.+)").exec(str)[1];
+    }
+
+}
+
+module.exports = sliceMoney;

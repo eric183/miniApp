@@ -1,0 +1,27 @@
+ <import src="card_banner" /> 
+
+<template name="productItem">
+    <template is="cardTop" />
+    <scroll-view class="product-scroll">
+    <!-- {{(index + 1) % 2 != 0 ? 'not-two': 'is-two' }} -->
+            <view wx:for="{{items}}" class="items-row">
+                <view wx:for="{{item}}"  class="single-item" wx:for-index="idx" wx:for-item="itemName" bindtap='itemBinder'>
+                    <view class="item-info">
+                        <image src='/images/2.jpg'></image>
+                    </view>
+                    <view class="item-text-info">
+                        <text>0919-25</text>
+                        <text>￥20.00/米</text>
+
+                        <view wx:if="{{isFavTemplate}}">
+                            <image src='/images/is_faved.png'></image>
+                        </view>
+                    </view>
+                    <!-- <view class="card-bottom-design">
+                    </view> -->
+                </view>
+                <template is="cardBottom" />
+            </view>
+             
+    </scroll-view>    
+</template>

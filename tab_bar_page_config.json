@@ -1,0 +1,19 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/home/home"
+    ],
+    "tabBar": {
+        "selectedColor": "#1296db",
+        "color": "red",
+        "backgroundColor": "#fff",
+        "position": "top",
+        "list": [{
+            "pagePath": "pages/index/index",
+            "text": "首页"
+        }, {
+            "pagePath": "pages/home/home",
+            "text": "home"
+        }]
+    }
+}

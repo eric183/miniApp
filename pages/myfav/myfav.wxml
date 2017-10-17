@@ -1,0 +1,8 @@
+<!--pages/myfav/myfav.wxml-->
+<import src="/components/product_item" />
+<view class="product-wrapper">
+        <template is="productItem" data="{{items, isFavTemplate}}"/>
+    <!-- <text bindtap="goDetail">{{content}}</text> -->
+    <!-- <import src="/components/tab.wxml" />
+    <template is="tabs" data="{{showTab: 'label'}}" /> -->
+</view>

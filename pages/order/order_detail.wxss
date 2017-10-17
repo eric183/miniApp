@@ -1,0 +1,74 @@
+/* pages/order/order_detail.js.wxss */
+
+.detail-wrapper {
+    font-size:28rpx;
+}
+
+.detail-wrapper scroll-view {
+    padding-bottom: 105rpx;
+}
+
+.money-content {
+    position: relative;
+    width: 100%;
+    height: 196rpx;
+}
+
+.money-content image:first-child {
+    width: 100%;
+    height: 100%;
+}
+
+.money-content view:nth-child(2) {
+     position: absolute;
+     left: 80rpx;
+     top: 56rpx;
+     display: flex;
+     flex-direction: column;
+     font-size: 32rpx;
+     color: #fff;
+}
+
+.money-content view:nth-child(2) text:last-child {
+    margin-top: 7rpx;
+    font-size: 24rpx;
+}
+
+.money-content view:last-child {
+    position: absolute;
+    width: 75rpx;
+    height: 52rpx;
+    top: 80rpx;
+    right: 82rpx;
+    z-index: 9;
+    /* background: red; */
+}
+
+.money-content view image {
+    width: 100%;
+    height: 100%;
+}
+
+.order-design {
+    margin-bottom: 15rpx;   
+}
+
+.cart-bottom {
+    /* line-height: 105rpx; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.cart-bottom view {
+    width: 150rpx;
+    height: 52rpx;
+    margin-right: 30rpx;
+    /* align-self: flex-end */
+    border-radius: 50rpx;
+    line-height: 52rpx;
+    text-align:center; 
+    background: #ff722c;
+    box-sizing: border-box;
+    color: #fff;
+} 

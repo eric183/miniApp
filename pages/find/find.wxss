@@ -1,0 +1,81 @@
+image {
+
+    width: 100%;
+    height: 100%;
+}
+
+page, .find-wrapper {
+    
+    height: 100%;
+}
+
+.find-wrapper {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+swiper  {
+    width: 100%;
+    height: 100%;
+} 
+
+.find-item:last-child swiper {
+    position: absolute;
+}
+
+.find-item:first-child {
+    height: 400rpx;
+}
+
+.find-item:last-child {
+    position: relative;
+    flex: 1; 
+}
+
+.arrow {
+    position: absolute;
+    width: 47rpx;
+    height: 17rpx;   
+    bottom: 243rpx;
+    /* margin-left: 0; */
+}
+
+.arrow image {
+    position: absolute;
+    top: 0;
+}
+
+.arrow:nth-child(3) {
+    left: 20rpx;
+    transform: rotate(180deg);
+    animation: arrowAnimationLeft 0.5s infinite alternate-reverse ease; 
+}
+
+.arrow:last-child {
+    right: 20rpx;
+    animation: arrowAnimationRight 0.5s infinite alternate-reverse ease; 
+    /* transform: rotate(0deg) */
+}
+
+@keyframes arrowAnimationLeft {
+    0% {
+        margin-left: 0;
+
+    }
+    100% {
+        margin-left: 10rpx;
+    }
+}
+
+@keyframes arrowAnimationRight {
+    0% {
+        margin-right: 0;
+
+    }
+    100% {
+        margin-right: 10rpx;
+    }
+}

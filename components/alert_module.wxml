@@ -1,0 +1,23 @@
+<template name="basicAlert">
+    <view class="alert-wrapper">
+        <view class="basic-alert">
+            <view>
+                <text>{{basicAlertJs.msg}}</text>
+            </view>
+            <view>
+                <view>取消</view>
+                <view bindtap='basicAlertJs.confirmButton'>确认</view>
+            </view>
+        </view>
+    </view>
+</template>
+<wxs module="basicAlertJs">
+    module.exports = {
+        msg : "asdf",
+        confirmButton: function() {
+            console.log("hi");
+        }
+    }
+</wxs>  
+
+

@@ -1,0 +1,35 @@
+<!--pages/order/order_detail.js.wxml-->
+<import src="/components/card_banner" />
+<import src="/components/address_card"/>
+<wxs src="order.wxs" module="order" />
+
+<view class="detail-wrapper">
+    <view>
+        <template is="cardTop" />
+            <view class="money-content" hidden="{{isSubmit}}">
+                <image src='/images/gra_bg.jpg'></image>
+                <view>
+                    <text>等待买家付款</text>
+                    <text>剩{{order.timer(time, true)}}分{{order.timer(time)}}秒自动关闭</text>
+                </view>
+                <view>
+                    <image src='/images/money.png'></image>
+                </view>   
+            </view>
+            <template is="cards" data="{{isOrder}}"/>
+        <!-- <template is="cardBottom" /> -->
+    </view>
+    <scroll-view>
+        <view>
+            <template is="orderInfo" data="{{isDetail,isSubmit}}"/>
+        </view>
+    </scroll-view>
+    <view class="cart-bottom">
+        <view>
+            <!-- <view></view> -->
+            <text>付款</text>
+        </view>
+    </view>
+</view>
+
+<!-- <text>pages/order/order_detail.js.wxml</text> -->

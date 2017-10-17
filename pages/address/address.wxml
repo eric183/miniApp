@@ -1,0 +1,15 @@
+<import src="/components/address_card.wxml" />
+<import src="/components/card_banner.wxml" />
+<!--pages/address/address.wxml-->
+<view class="address-wrapper">
+    <scroll-view class="scroll-wrapper">
+        <template is="cardTop"/> 
+        <template is="cards" wx:for="{{items}}" data="{{item, index}}"  wx:key="{{index}}"/>
+        <radio-group bindchange="radioChange" class="radios">
+            <view wx:for="{{[{checked: false},{checked: true},{checked: false}]}}" class="radio">
+                <radio id="radio{{index}}" value="{{item.data}}" checked="{{item.checked}}"/>默认地址{{item.checked}}
+            </view>
+        </radio-group>
+    </scroll-view>
+</view>
+

@@ -1,0 +1,76 @@
+<!--pages/cart/cart.wxml-->
+<import src="/components/card_banner" />
+<import src="/components/alert_module" />
+
+<view class="cart-wrapper">
+    <template is="cardTop" />
+    <view class="card-edit-tool" hidden="{{showString == 'edit'}}">
+        <text bindtap='toolBinder' data-show="edit">完成</text> 
+    </view>
+    <view class="card-edit-tool" hidden="{{showString == 'finish'}}">
+        <text bindtap='toolBinder' data-show="finish">编辑</text> 
+    </view>
+    <template is="cardBottom" />
+    <scroll-view scroll-y class="scroll-view">
+        <view class="order-detail" wx:for="{{items}}">
+            <view class="order-clicker" bindtap='checkHandler' data-index="{{index}}"></view>
+            <view bindtap='checkHandler' data-index="{{index}}">
+                <view class="chosen-circle common-circle" hidden="{{item.checked}}" ></view>
+                <view class="common-circle" hidden="{{!item.checked}}" >
+                    <image class="checked-right" src='/images/checked.png'></image>
+                </view>
+            </view>
+            <view class="order-items">
+                <image src="/images/2.jpg"></image> 
+                <view class="order-detail-info">
+                    <text>MH-7980</text>
+                    <text class="grey-text">货号：MH-7980</text>
+                    <text class="grey-text">类型：调样</text>
+                    <view class="bottom-view">
+                        <text>￥80</text><text class="smaller-text">.00/码</text>
+                    </view>
+                    <text class="order-count" hidden="{{showString == 'finish'}}">X{{item.count}}</text> 
+                    <view hidden="{{showString == 'edit'}}" class="order-count order-input {{item.count == 1 ? 'count-only-one' : ''}}">
+                        <view data-index="{{index}}" bindtap='minusHandler'>-</view>
+                        <label>
+                            <input value="{{item.count}}" data-index="{{index}}" bindinput='inputHandler'></input>
+                        </label>
+                        <view data-index="{{index}}" bindtap='plusHandler'>+</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="cart-bottom">
+        <view class="common-wrapper delete-wrapper" hidden="{{showString == 'edit'}}">
+            <view class="chose-all" bindtap='activeAll' data-select-all="{{selectAll}}">
+                <view class="common-circle chosen-circle" hidden="{{showString == 'edit' || selectAll}}"></view>
+                <view class="common-circle" hidden="{{!selectAll}}" >
+                    <image class="checked-right" src='/images/checked.png'></image>
+                </view>
+                <text>全选</text>
+            </view>
+            <view class="button" bindtap='deleteButton'>删除</view>
+        </view>
+        <view class="common-wrapper delete-wrapper" >
+            <view class="chose-all" bindtap='activeAll' data-select-all="{{selectAll}}">
+                <view class="common-circle chosen-circle" hidden="{{selectAll}}"></view>
+                <view class="common-circle" hidden="{{!selectAll}}" >
+                    <image class="checked-right" src='/images/checked.png'></image>
+                </view>
+                <text>全选</text>
+            </view>
+            <view class="money-block" hidden="{{showString != 'edit'}}">
+                <view>
+                    <text>合计: </text><text>￥160.</text><text>00</text>
+                </view>
+                <text>不含邮费</text>
+            </view>
+            <view class="button" bindtap='dealButton'>结算</view>
+            <view class="button" hidden="{{showString == 'edit'}}" bindtap='deleteButton'>删除</view>
+        </view>  
+    </view>
+    <!-- <template is="basicAlert" /> -->
+</view>
+
+<!-- <text>pages/cart/cart.wxml</text> -->
