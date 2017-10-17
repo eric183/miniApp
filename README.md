@@ -1,3 +1,3 @@
 # miniApp
 
-here is a backup app of my company
+just a backup thing
